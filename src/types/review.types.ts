@@ -3,4 +3,5 @@ export interface Review {
   patientName: string;
   rating: number;
   message: string;
+  patientTitle?: string;
 }

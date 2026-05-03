@@ -10,14 +10,41 @@ type BlogCardProps = {
 
 export function BlogCard({ post }: BlogCardProps) {
   return (
-    <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-      <p className="text-xs font-semibold uppercase tracking-wide text-sky-700">{post.category}</p>
-      <h3 className="mt-2 text-lg font-semibold text-slate-900">{post.title}</h3>
-      <p className="mt-2 text-sm text-slate-600">{truncateText(post.excerpt, 100)}</p>
-      <p className="mt-3 text-xs text-slate-500">{formatDisplayDate(post.publishedAt)}</p>
-      <Link href={`${ROUTES.blog}/${post.slug}`} className="mt-4 inline-flex text-sm font-medium text-sky-700">
-        Read article
-      </Link>
+    <article className="group rounded-xl border-2 border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-sky-400 hover:shadow-lg">
+      <div className="space-y-4">
+        {/* Category Badge */}
+        <div className="inline-flex rounded-full bg-sky-100 px-3 py-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-sky-700">
+            {post.category}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-lg font-bold text-slate-900 transition-colors duration-200 group-hover:text-sky-600">
+          {post.title}
+        </h3>
+
+        {/* Excerpt */}
+        <p className="text-sm leading-relaxed text-slate-600">
+          {truncateText(post.excerpt, 100)}
+        </p>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between border-t border-slate-200 pt-4">
+          <time className="text-xs font-medium uppercase text-slate-500">
+            {formatDisplayDate(post.publishedAt)}
+          </time>
+          <Link
+            href={`${ROUTES.blog}/${post.slug}`}
+            className="inline-flex gap-2 rounded-lg bg-sky-600 px-3 py-1.5 text-xs font-semibold text-white transition-all duration-200 hover:bg-sky-700 hover:gap-2.5"
+          >
+            Read
+            <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
+          </Link>
+        </div>
+      </div>
     </article>
   );
 }

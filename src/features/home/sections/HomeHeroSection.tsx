@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
   CalendarPlus,
   Clock3,
+  MapPin,
   PhoneCall,
   ShieldCheck,
   Star,
@@ -13,195 +15,268 @@ import { ROUTES } from "@/constants/routes";
 
 export function HomeHeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-sky-50 py-10 sm:py-14 md:py-24">
-      {/* Background glow */}
-      <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-sky-300/25 blur-3xl" />
-      <div className="pointer-events-none absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-cyan-300/25 blur-3xl" />
+    <section className="relative overflow-hidden border-b border-sky-100 bg-[#f5fbff] py-8 sm:py-10 md:py-14">
+      {/* Animated medical background */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(14,165,233,0.20),transparent_30%),radial-gradient(circle_at_85%_12%,rgba(45,212,191,0.16),transparent_28%),radial-gradient(circle_at_72%_90%,rgba(16,185,129,0.12),transparent_32%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(240,249,255,0.72),rgba(236,254,255,0.82))]" />
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-full bg-[linear-gradient(to_right,rgba(14,165,233,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.08)_1px,transparent_1px)] bg-[size:44px_44px] opacity-40" />
 
-      <Container className="relative grid gap-8 md:grid-cols-[1.08fr_0.92fr] md:items-center md:gap-10">
-        {/* Left Content */}
-        <div className="mx-auto max-w-3xl text-center md:mx-0 md:text-left">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-white/75 px-3 py-1.5 text-[0.68rem] font-semibold text-sky-700 shadow-sm backdrop-blur-xl sm:gap-2 sm:px-4 sm:py-2 sm:text-sm">
-            <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            Trusted Single Doctor Healthcare
-          </div>
+      <Container className="relative">
+        <div className="relative overflow-hidden rounded-[1.8rem] border border-white/85 bg-white/58 p-4 shadow-[0_30px_95px_-58px_rgba(15,23,42,0.58)] backdrop-blur-2xl transition-all duration-700 hover:shadow-[0_36px_110px_-62px_rgba(14,165,233,0.55)] sm:p-5 md:grid md:grid-cols-[1.03fr_0.97fr] md:items-center md:gap-8 lg:p-8">
+          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+          <div className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-sky-300/20 blur-3xl motion-safe:animate-pulse" />
+          <div className="pointer-events-none absolute -bottom-28 -right-24 h-80 w-80 rounded-full bg-cyan-300/20 blur-3xl motion-safe:animate-pulse" />
 
-          <h1 className="mt-4 text-[2.15rem] font-bold leading-[1.08] tracking-tight text-slate-950 sm:text-4xl md:mt-5 md:text-5xl lg:text-6xl">
-            Personal healthcare with a{" "}
-            <span className="bg-gradient-to-r from-sky-600 to-cyan-500 bg-clip-text text-transparent">
-              trusted doctor
-            </span>
-          </h1>
+          {/* Left content */}
+          <div className="relative order-2 mt-6 md:order-1 md:mt-0">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/80 bg-white/80 px-3 py-1.5 text-[0.72rem] font-semibold text-sky-700 shadow-sm backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-white sm:text-xs">
+              <ShieldCheck className="h-3.5 w-3.5" />
+              নিরাপদ, সহজ ও বিশ্বস্ত চিকিৎসা সেবা
+            </div>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base md:mx-0 md:mt-5 md:text-lg md:leading-8">
-            Book appointments, check chamber schedule, explore treatments, and
-            connect with your doctor from one clean and modern clinic platform.
-          </p>
-
-          {/* Mobile: 2 buttons side by side */}
-          <div className="mt-6 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-3 md:mt-8 md:justify-start">
-            <Link
-              href={ROUTES.appointment}
-              className="group relative inline-flex h-11 min-w-0 items-center justify-center overflow-hidden rounded-full bg-slate-950 px-3 text-[0.78rem] font-semibold text-white shadow-[0_18px_34px_-18px_rgba(15,23,42,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_45px_-20px_rgba(15,23,42,0.95)] active:scale-[0.97] sm:h-12 sm:px-6 sm:text-sm"
-            >
-              <span className="relative z-10 inline-flex items-center gap-1.5 whitespace-nowrap sm:gap-2">
-                <CalendarPlus className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                Book
-                <span className="hidden xs:inline">Appointment</span>
+            <h1 className="mt-4 max-w-2xl text-[2.05rem] font-bold leading-[1.12] tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+              আপনার স্বাস্থ্যসেবা এখন
+              <span className="block bg-gradient-to-r from-sky-700 via-cyan-600 to-emerald-600 bg-clip-text text-transparent">
+                আরও সহজ ও professional
               </span>
+            </h1>
 
-              <span className="pointer-events-none absolute inset-y-0 -left-[75%] w-[42%] -skew-x-12 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 blur-[1px] transition-all duration-700 group-hover:translate-x-[360%] group-hover:opacity-100" />
-            </Link>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
+              অভিজ্ঞ ডাক্তারের chamber schedule দেখুন, সহজে appointment বুক করুন
+              এবং প্রয়োজনীয় চিকিৎসা পরামর্শের জন্য দ্রুত যোগাযোগ করুন। রোগীদের
+              জন্য পরিষ্কার, নির্ভরযোগ্য এবং সহজে বোঝার মতো clinic experience.
+            </p>
 
-            <Link
-              href={ROUTES.doctor}
-              className="group inline-flex h-11 min-w-0 items-center justify-center gap-1.5 rounded-full border border-slate-200 bg-white/80 px-3 text-[0.78rem] font-semibold text-slate-900 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:bg-white hover:shadow-md active:scale-[0.97] sm:h-12 sm:gap-2 sm:px-6 sm:text-sm"
-            >
-              <span className="whitespace-nowrap">Meet Doctor</span>
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
-            </Link>
-          </div>
-
-          {/* Small Trust Stats */}
-          <div className="mt-7 grid max-w-2xl grid-cols-3 gap-2 sm:mt-10 sm:gap-3 md:grid-cols-3">
-            <div className="rounded-2xl border border-white/70 bg-white/70 p-3 shadow-sm backdrop-blur-xl sm:p-4">
-              <div className="flex flex-col items-center gap-1 text-sky-700 sm:flex-row sm:gap-2 md:items-start">
-                <Star className="h-3.5 w-3.5 fill-sky-600 sm:h-4 sm:w-4" />
-                <span className="text-[0.72rem] font-bold sm:text-sm">4.9</span>
+            {/* Trust cards */}
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <div className="group rounded-2xl border border-white/85 bg-white/72 p-3 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
+                <div className="flex items-center gap-2">
+                  <div className="grid h-9 w-9 place-items-center rounded-xl bg-sky-50 text-sky-700 transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white">
+                    <Stethoscope className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">
+                      অভিজ্ঞ ডাক্তার
+                    </p>
+                    <p className="mt-0.5 text-[0.68rem] text-slate-500">
+                      Medicine & General Care
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="mt-1 text-[0.65rem] leading-4 text-slate-500 sm:text-xs">
-                Rating
-              </p>
+
+              <div className="group rounded-2xl border border-white/85 bg-white/72 p-3 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
+                <div className="flex items-center gap-2">
+                  <div className="grid h-9 w-9 place-items-center rounded-xl bg-amber-50 text-amber-600 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white">
+                    <Star className="h-4 w-4 fill-current" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">
+                      রোগীর আস্থা
+                    </p>
+                    <p className="mt-0.5 text-[0.68rem] text-slate-500">
+                      4.9 patient rating
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group rounded-2xl border border-white/85 bg-white/72 p-3 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
+                <div className="flex items-center gap-2">
+                  <div className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 text-emerald-600 transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white">
+                    <Clock3 className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">
+                      নিয়মিত chamber
+                    </p>
+                    <p className="mt-0.5 text-[0.68rem] text-slate-500">
+                      Daily OPD schedule
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="rounded-2xl border border-white/70 bg-white/70 p-3 shadow-sm backdrop-blur-xl sm:p-4">
-              <div className="flex flex-col items-center gap-1 text-sky-700 sm:flex-row sm:gap-2 md:items-start">
-                <Stethoscope className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                <span className="text-[0.72rem] font-bold sm:text-sm">10+</span>
-              </div>
-              <p className="mt-1 text-[0.65rem] leading-4 text-slate-500 sm:text-xs">
-                Years
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/70 bg-white/70 p-3 shadow-sm backdrop-blur-xl sm:p-4">
-              <div className="flex flex-col items-center gap-1 text-sky-700 sm:flex-row sm:gap-2 md:items-start">
-                <Clock3 className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                <span className="text-[0.72rem] font-bold sm:text-sm">
-                  Daily
+            {/* CTA buttons */}
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+              <Link
+                href={ROUTES.appointment}
+                className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-full bg-slate-950 px-4 text-xs font-semibold text-white shadow-[0_20px_42px_-24px_rgba(15,23,42,1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_65px_-28px_rgba(14,165,233,0.85)] active:scale-[0.98] sm:h-12 sm:px-6 sm:text-sm"
+              >
+                <span className="absolute left-1/2 top-1/2 h-0 w-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-sky-600 via-cyan-600 to-emerald-500 transition-all duration-500 group-hover:h-56 group-hover:w-56" />
+                <span className="relative z-10 inline-flex items-center gap-2">
+                  <CalendarPlus className="h-4 w-4 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:rotate-12 group-hover:scale-110" />
+                  Appointment নিন
                 </span>
-              </div>
-              <p className="mt-1 text-[0.65rem] leading-4 text-slate-500 sm:text-xs">
-                OPD
-              </p>
+              </Link>
+
+              <Link
+                href={ROUTES.doctor}
+                className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-full border border-white/85 bg-white/80 px-4 text-xs font-semibold text-slate-900 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-sky-200 hover:bg-white hover:text-sky-700 hover:shadow-md active:scale-[0.98] sm:h-12 sm:px-6 sm:text-sm"
+              >
+                <span className="absolute left-1/2 top-1/2 h-0 w-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-100 transition-all duration-500 group-hover:h-40 group-hover:w-40" />
+                <span className="relative z-10 inline-flex items-center gap-2">
+                  ডাক্তার দেখুন
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+                </span>
+              </Link>
             </div>
+
+            <p className="mt-4 text-xs leading-5 text-slate-500">
+              জরুরি সমস্যায় সরাসরি কল করুন। Online appointment শুধুমাত্র chamber
+              visit সহজ করার জন্য।
+            </p>
           </div>
-        </div>
 
-        {/* Right Doctor Card */}
-        <div className="relative">
-          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/70 bg-white/60 p-3 shadow-[0_30px_80px_-42px_rgba(15,23,42,0.55)] backdrop-blur-2xl sm:rounded-[2rem] sm:p-4">
-            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+          {/* Right doctor profile */}
+          <div className="relative order-1 transition-transform duration-700 hover:-translate-y-1 md:order-2">
+            <div className="relative overflow-hidden rounded-[1.55rem] border border-white/90 bg-white/62 p-3 shadow-[0_28px_88px_-48px_rgba(15,23,42,0.68)] backdrop-blur-2xl transition-all duration-500 hover:shadow-[0_34px_100px_-52px_rgba(14,165,233,0.58)] sm:rounded-[2rem] sm:p-4">
+              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+              <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-sky-300/25 blur-3xl motion-safe:animate-pulse" />
+              <div className="pointer-events-none absolute -bottom-24 left-8 h-60 w-60 rounded-full bg-emerald-300/16 blur-3xl motion-safe:animate-pulse" />
 
-            <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-sky-300/30 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 left-10 h-64 w-64 rounded-full bg-cyan-300/25 blur-3xl" />
-
-            {/* Doctor Identity */}
-            <div className="relative rounded-3xl border border-white/70 bg-white/75 p-4 shadow-sm backdrop-blur-xl sm:p-5">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-slate-950 text-white shadow-lg sm:h-16 sm:w-16">
-                  <Stethoscope
-                    className="h-6 w-6 sm:h-7 sm:w-7"
-                    strokeWidth={1.8}
+              {/* Doctor photo */}
+              <div className="group relative overflow-hidden rounded-[1.3rem] bg-gradient-to-br from-sky-50 via-white to-cyan-50 sm:rounded-[1.6rem]">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="/doctor.png"
+                    alt="Doctor photo"
+                    fill
+                    priority
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 
-                <div className="min-w-0">
-                  <p className="text-xs font-medium text-sky-700 sm:text-sm">
-                    General Physician
+                <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/90 px-3 py-1.5 text-[0.7rem] font-bold text-emerald-700 shadow-sm backdrop-blur-xl">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                  </span>
+                  আজ chamber আছে
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/62 via-slate-950/18 to-transparent p-4">
+                  <p className="text-xs font-medium text-white/85">
+                    Trusted consultation
                   </p>
-                  <h3 className="mt-1 text-lg font-bold text-slate-950 sm:text-xl">
+                  <h2 className="mt-1 text-xl font-bold text-white sm:text-2xl">
                     Dr. Sarah Ahmed
-                  </h3>
-                  <p className="mt-1 text-xs text-slate-500 sm:text-sm">
+                  </h2>
+                  <p className="mt-1 text-xs text-white/78">
                     MBBS, FCPS Medicine
                   </p>
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5 sm:gap-3">
-                <div className="rounded-2xl bg-slate-50 p-3 sm:p-4">
-                  <p className="text-[0.7rem] font-medium text-slate-500 sm:text-xs">
-                    Experience
-                  </p>
-                  <p className="mt-1 text-base font-bold text-slate-950 sm:text-lg">
-                    10+ Years
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-slate-50 p-3 sm:p-4">
-                  <p className="text-[0.7rem] font-medium text-slate-500 sm:text-xs">
-                    Patients
-                  </p>
-                  <p className="mt-1 text-base font-bold text-slate-950 sm:text-lg">
-                    8k+
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Today Schedule */}
-            <div className="relative mt-3 rounded-3xl border border-white/70 bg-white/75 p-4 shadow-sm backdrop-blur-xl sm:mt-4 sm:p-5">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-sm font-semibold text-slate-950">
-                    Today&apos;s Chamber
-                  </p>
-                  <p className="mt-1 text-xs text-slate-500 sm:text-sm">
-                    Available for consultation
-                  </p>
-                </div>
-
-                <div className="rounded-full bg-emerald-50 px-3 py-1 text-[0.68rem] font-bold text-emerald-700 sm:text-xs">
-                  Open
-                </div>
-              </div>
-
-              <div className="mt-4 space-y-2 sm:space-y-3">
-                <div className="flex items-center justify-between gap-3 rounded-2xl bg-slate-50 px-3 py-3 sm:px-4">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 sm:text-sm">
-                    <Clock3 className="h-4 w-4 text-sky-600" />
-                    Evening OPD
+              {/* Doctor details */}
+              <div className="relative mt-3 rounded-[1.25rem] border border-white/85 bg-white/82 p-4 shadow-sm backdrop-blur-xl sm:mt-4 sm:rounded-[1.5rem] sm:p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold text-sky-700">
+                      General Physician
+                    </p>
+                    <h3 className="mt-1 text-lg font-bold text-slate-950 sm:text-xl">
+                      ব্যক্তিগত যত্নে চিকিৎসা পরামর্শ
+                    </h3>
+                    <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">
+                      রোগীর সমস্যা শুনে প্রয়োজন অনুযায়ী পরামর্শ ও follow-up
+                      guidance দেওয়া হয়।
+                    </p>
                   </div>
-                  <span className="text-xs font-bold text-slate-950 sm:text-sm">
+
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-slate-950 to-slate-800 text-white shadow-lg transition-transform duration-300 hover:rotate-6 hover:scale-105">
+                    <Stethoscope className="h-5 w-5" strokeWidth={1.8} />
+                  </div>
+                </div>
+
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  <div className="rounded-2xl border border-slate-100 bg-slate-50/90 p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white">
+                    <p className="text-[0.68rem] font-medium text-slate-500">
+                      Experience
+                    </p>
+                    <p className="mt-1 text-base font-bold text-slate-950">
+                      10+ Years
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-slate-100 bg-slate-50/90 p-3 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white">
+                    <p className="text-[0.68rem] font-medium text-slate-500">
+                      Served Patients
+                    </p>
+                    <p className="mt-1 text-base font-bold text-slate-950">
+                      8k+
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Schedule */}
+              <div className="relative mt-3 grid gap-2 sm:mt-4">
+                <div className="group flex items-center justify-between gap-3 rounded-2xl border border-white/85 bg-white/82 px-3 py-3 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-white sm:px-4">
+                  <div className="flex min-w-0 items-center gap-2">
+                    <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-sky-50 text-sky-700 transition-all duration-300 group-hover:bg-sky-600 group-hover:text-white">
+                      <Clock3 className="h-4 w-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-slate-900">
+                        Evening Chamber
+                      </p>
+                      <p className="text-[0.68rem] text-slate-500">
+                        আজকের schedule
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="shrink-0 text-xs font-bold text-slate-950">
                     6PM - 10PM
-                  </span>
+                  </p>
                 </div>
 
-                <div className="flex items-center justify-between gap-3 rounded-2xl bg-slate-50 px-3 py-3 sm:px-4">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 sm:text-sm">
-                    <PhoneCall className="h-4 w-4 text-sky-600" />
-                    Hotline
+                <div className="group flex items-center justify-between gap-3 rounded-2xl border border-white/85 bg-white/82 px-3 py-3 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-white sm:px-4">
+                  <div className="flex min-w-0 items-center gap-2">
+                    <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-700 transition-all duration-300 group-hover:bg-emerald-600 group-hover:text-white">
+                      <MapPin className="h-4 w-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-slate-900">
+                        Clinic Location
+                      </p>
+                      <p className="truncate text-[0.68rem] text-slate-500">
+                        Rangpur, Bangladesh
+                      </p>
+                    </div>
                   </div>
-                  <span className="text-xs font-bold text-slate-950 sm:text-sm">
-                    +880 1XXX
-                  </span>
+
+                  <Link
+                    href={ROUTES.doctor}
+                    className="shrink-0 rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-700 transition hover:bg-sky-100"
+                  >
+                    Details
+                  </Link>
                 </div>
               </div>
+
+              {/* Contact CTA */}
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:mt-4">
+                <a
+                  href="tel:+8801XXXXXXXXX"
+                  className="group inline-flex h-11 items-center justify-center gap-2 rounded-2xl border border-white/85 bg-white/88 text-xs font-bold text-slate-900 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:bg-white hover:text-sky-700 hover:shadow-md active:scale-[0.98]"
+                >
+                  <PhoneCall className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
+                  Call Now
+                </a>
+
+                <Link
+                  href={ROUTES.appointment}
+                  className="group inline-flex h-11 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-600 to-cyan-600 text-xs font-bold text-white shadow-[0_20px_42px_-24px_rgba(2,132,199,0.95)] transition-all duration-300 hover:-translate-y-0.5 hover:from-sky-700 hover:to-cyan-700 active:scale-[0.98]"
+                >
+                  <CalendarPlus className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+                  Book Now
+                </Link>
+              </div>
             </div>
-
-            {/* Bottom CTA */}
-            <Link
-              href={ROUTES.appointment}
-              className="group relative mt-3 inline-flex h-11 w-full items-center justify-center overflow-hidden rounded-2xl bg-sky-600 text-xs font-bold text-white shadow-[0_18px_34px_-18px_rgba(2,132,199,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-700 active:scale-[0.98] sm:mt-4 sm:h-12 sm:text-sm"
-            >
-              <span className="relative z-10 inline-flex items-center gap-2">
-                <CalendarPlus className="h-4 w-4" />
-                Get Appointment Today
-              </span>
-
-              <span className="pointer-events-none absolute inset-y-0 -left-[75%] w-[42%] -skew-x-12 bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 blur-[1px] transition-all duration-700 group-hover:translate-x-[360%] group-hover:opacity-100" />
-            </Link>
           </div>
         </div>
       </Container>
